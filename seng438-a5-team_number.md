@@ -89,20 +89,26 @@ This lab presented significant challenges not because of its content, but due to
 
 ## C-SFRAT
 
+- Platform support
+  - We ran into the same issue as SRTAT, the program properly ran on the Windows machines. No installer was provided for MacOS, thus we need to complile the program from the source code. However, the python libraries the program used do not support ARM.
+- Data format
+  - We had to change the dataset format to be used with C-SFRAT. Aubertine et al. [[1](https://doi.org/10.1016/j.softx.2021.100909)] described the dataset format required for C-SFRAT. The [dataset](./failure-data-set2/Failure_Data_Set/Failure%20Report%201.docx) we used listed all the failures and their occurence time, we had to adjust this data by defining a fixed time interval, and uniformly distributing the errors. This potentially reduces the accuracy of the dataset, however it is a neccesary tradeoff due to the difficulties experienced.
+
 ## RDC-11
 
 - Data format
-  - RDC-11 required us to change our data format. The instruction and tooltips contained in the excel sheet are not very clear. Fortunately we found a few research papers that explained how a RDC works [[1](https://doi.org/10.1109/ICSM.2005.46), [2](http://robertvbinder.com/wp-content/uploads/rvb-pdf/arts/Testers-Dashboard-Final.pdf), [3](http://sourceforge.net/projects/rdc/)].
+  - RDC-11 required us to change our data format. The instruction and tooltips contained in the excel sheet are not very clear. Fortunately we found a few research papers that explained how a RDC works [[2](https://doi.org/10.1109/ICSM.2005.46), [3](http://robertvbinder.com/wp-content/uploads/rvb-pdf/arts/Testers-Dashboard-Final.pdf), [4](http://sourceforge.net/projects/rdc/)].
 - RDC generation
+  - We were not able to use RDC-11 as the RDC would not update after inputing the data. The line graph whould update, however we could not increase the range of the data captured, hence we were not able to capture our entire data set. The instructions to increase the range of the failure data are out of date with modern versions of Excel. Increasing the range manually also did not work as the data was not getting calculated in the `plot graph` sheet.
 
 # Comments/feedback on the lab itself
 
 # References
 
-[1]   Pankaj Bhawnani, B.H. Far, and G. Ruhe. 2005. Explorative study to provide decision support for software release decisions. In 21st IEEE International Conference on Software Maintenance (ICSM’05), 617–620. DOI:https://doi.org/10.1109/ICSM.2005.46
+[1]   Jacob Aubertine, Kenan Chen, Vidhyashree Nagaraju, and Lance Fiondella. 2022. A covariate software tool to guide test activity allocation. SoftwareX 17, (January 2022), 100909. DOI:https://doi.org/10.1016/j.softx.2021.100909
 
-[2]   Robert V. Binder and Peter Lakey. 2010. The Tester’s Dashboard: Release Decision Support.
+[2]   Pankaj Bhawnani, B.H. Far, and G. Ruhe. 2005. Explorative study to provide decision support for software release decisions. In 21st IEEE International Conference on Software Maintenance (ICSM’05), 617–620. DOI:https://doi.org/10.1109/ICSM.2005.46
 
-[3]   Robert V. Binder. RDC: The Reliability Demo Chart. http://sourceforge.net/projects/rdc/ (accessed March 30th, 2023).
+[3]   Robert Binder and Peter Lakey. 2010. The Tester’s Dashboard: Release Decision Support. Retrieved from http://robertvbinder.com/wp-content/uploads/rvb-pdf/arts/Testers-Dashboard-Final.pdf
 
-
+[4]   Robert V. Binder. RDC: The Reliability Demo Chart. http://sourceforge.net/projects/rdc/ (accessed March 30th, 2023).
