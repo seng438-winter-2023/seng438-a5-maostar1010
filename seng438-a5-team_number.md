@@ -20,9 +20,13 @@ To provide an example of our cleaned data set, let's consider the first hour. Du
 | - | -   | - |
 | 1 | 9   | 0.11|
 
-After running our data set through each model we decided to select two models to compare Geometric Mean (GM) with no covariate and Negative Binomial (Order 2) also with no covariate. The model comparsion can be found here. Additionally, we will be running the models on 66% of our subset, so we can gauge the accuracy of the predictions by predicting the last 4 intervals.
+[cleaned-data.xlsx](./cleaned-failure-data-set/cleaned-data.xlsx)
+
+After running our data set through each model we decided to select two models to compare Geometric Mean (GM) with no covariate and Negative Binomial (Order 2) also with no covariate. The model comparsion can be found [here](./model_results.csv). Additionally, we will be running the models on 66% of our subset, so we can gauge the accuracy of the predictions by predicting the last 4 intervals.
 
 Time to Failure plot:
+
+![](./media/time-to-failure.png)
 
 
 From the models the failure rate / mean time to failure (MTTF) are:
@@ -35,14 +39,29 @@ From the models the failure rate / mean time to failure (MTTF) are:
 
 As we can see the NB2 model's prediction was very accurate. The GM's predicition was off and presumed more errors would have occured.
 
-
 Intensity plot:
+
+
+![](./media/intensity.png)
 
 From the failure intensity plot we can see a general trend down in failure intensity per interval.
 
 ## Acceptable range of failure rate
 
 The acceptable range of failure rates vary depending on the software. If the acceptable range of failure rate was below 4 then this dataset would be in the acceptable range. However, if a firm decided that 3 errors per hour was the cutoff then the dataset would be unacceptable.
+
+## Advantages and Disadvantages of RGT testing
+
+### Advantages
+
+- Predicting future results of your dataset is easy to accomplish with predefined models
+- It is easy to compare models
+- RGT testing provides objective metrics for the relability of your software
+
+### Disadvantages
+
+- The results of RGT testing are dependent on the quality of your data set.
+- RGT testing has a limited scope it only concerns itself with software errors, and not usability / security issues
 
 # Assessment Using Reliability Demonstration Chart 
 
