@@ -73,4 +73,36 @@ The acceptable range of failure rates vary depending on the software. If the acc
 
 # Difficulties encountered, challenges overcome, and lessons learned
 
+This lab presented significant challenges not because of its content, but due to the tools required to complete it. Throughout the process, we encountered several issues with the tools, including the following:
+
+## SRTAT
+
+- Platform support
+  - Most of our team members used an x86_64 Windows machine, but one member used an ARMv8.5 MacBook, which led to difficulties since the sMERFS library did not support the ARM instruction set. As a result, we were able to run the SRTAT on the MacBook, but could not process the models as the library was not supported, resulting in a `java.lang.UnsatisfiedLinkError` each time. Unfortunately, without access to the source code, we could not alleviate this issue.
+- Model Support
+  - We also experienced some issues running the models on the Windows machines. Initially, we encountered the same `java.lang.UnsatisfiedLinkError`, but were able to solve it by modifying the jar command to run SRTAT. 
+  
+    `java -D"java.library.path"=. -jar SRTAT.jar`
+  - Despite this, most of the models produced errors when executing, and only the 'Geometric' and 'Littlewood and Varral's Bayesian Reliability' models completed successfully. Moreover, we could only select a single model at a time, which made comparisons difficult.
+- Usability
+  - We are typically able to diagnose issues when using unfamiliar software. However, we could not find any documentation or guides on using this software, and the help link displayed in the software was dead. This made the software difficult to use and hindered our progress in completing the lab.
+
+## C-SFRAT
+
+## RDC-11
+
+- Data format
+  - RDC-11 required us to change our data format. The instruction and tooltips contained in the excel sheet are not very clear. Fortunately we found a few research papers that explained how a RDC works [[1](https://doi.org/10.1109/ICSM.2005.46), [2](http://robertvbinder.com/wp-content/uploads/rvb-pdf/arts/Testers-Dashboard-Final.pdf), [3](http://sourceforge.net/projects/rdc/)].
+- RDC generation
+
 # Comments/feedback on the lab itself
+
+# References
+
+[1]   Pankaj Bhawnani, B.H. Far, and G. Ruhe. 2005. Explorative study to provide decision support for software release decisions. In 21st IEEE International Conference on Software Maintenance (ICSM’05), 617–620. DOI:https://doi.org/10.1109/ICSM.2005.46
+
+[2]   Robert V. Binder and Peter Lakey. 2010. The Tester’s Dashboard: Release Decision Support.
+
+[3]   Robert V. Binder. RDC: The Reliability Demo Chart. http://sourceforge.net/projects/rdc/ (accessed March 30th, 2023).
+
+
