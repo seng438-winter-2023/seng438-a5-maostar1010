@@ -10,9 +10,11 @@
 
 # Introduction
 
+The purpose of this lab is to measure the reliability of software using two different techniques. The two techniques used are Reliability Growth Testing (RGT) and Reliability Demo Charting (RDC). We will use both techniques to measure the reliability and quality of a hypothetical system and compare the efficacy and usability of each technique. We selected [Failure Report 1](./failure-data-set2/Failure_Data_Set/Failure%20Report%201.docx) as our system to assess. This system is a hypothetical front-end system, the failures are measured over the course of 12 hours. Each failure is documented, with the description, time of occurence, severity, and state.
+
 # Assessment Using Reliability Growth Testing 
 
-For our Reliability Growth Testing (RGT), we selected C-SFRAT as our preferred tool due to its user-friendly interface. However, we encountered compatibility issues with the initial data sets. To address this, we modified Failure Report 1 to comply with C-SFRAT's required format. We established a time interval of 1 hour and assumed that the failures were uniformly distributed.
+For our RGT, we selected C-SFRAT as our preferred tool due to its user-friendly interface. However, we encountered compatibility issues with the initial data sets. To address this, we modified Failure Report 1 to comply with C-SFRAT's required format. We established a time interval of 1 hour and assumed that the failures were uniformly distributed.
 
 To provide an example of our cleaned data set, let's consider the first hour. During this interval, 9 errors were recorded, hence the execution time per failure is 0.11 (in hours):
 
